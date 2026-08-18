@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+.DS_Store
+*.sqlite
+database.sqlite
+.vite/
+server/data/fieldlink.db
