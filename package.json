@@ -4,7 +4,7 @@
   "description": "FieldLink Field Agent Digital Onboarding Platform",
   "private": true,
   "scripts": {
-    "install:all": "cd server && npm install --include=dev && cd ../client && npm install --include=dev",
+    "install:all": "cd server && npm install --no-package-lock --include=dev && cd ../client && npm install --no-package-lock --include=dev",
     "seed": "cd server && npm run seed",
     "dev:server": "cd server && npm run dev",
     "dev:client": "cd client && npm run dev",
