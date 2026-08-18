@@ -23,15 +23,8 @@ app.use(helmet({
 }));
 
 // ─── CORS ────────────────────────────────────────────────────────────────────
-const allowedOrigins = (process.env.CLIENT_URL || 'http://localhost:5173').split(',');
 app.use(cors({
-  origin: (origin, cb) => {
-    // Allow if no origin (same-origin, Postman, etc.) or if origin is in allowedOrigins
-    if (!origin || allowedOrigins.includes(origin)) return cb(null, true);
-    // Auto-allow the Render domain if it's the origin making the request to itself
-    if (origin.endsWith('.onrender.com')) return cb(null, true);
-    cb(new Error('Not allowed by CORS'));
-  },
+  origin: true, // Automatically reflect the request origin to allow any custom domain
   credentials: true,
 }));
 
